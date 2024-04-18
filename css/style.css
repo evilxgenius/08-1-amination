@@ -1,0 +1,19 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background-color: black;
+}
+.wrapper .field__ground {
+  position: absolute;
+  min-width: 100%;
+}
+.wrapper .field__ground:nth-child(1) {
+  top: 65%;
+  transform: scaleX(-1);
+}
+.wrapper .field__ground:nth-child(2) {
+  top: 70%;
+}
+
+/*# sourceMappingURL=style.css.map */
