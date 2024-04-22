@@ -4,6 +4,110 @@
     height: 100vh;
     background-color: black;
 
+    .sky {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        animation-name: sky;
+        animation-duration: 24s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+
+        @keyframes sky {
+            from, to   { background-color: black; }
+            2%  { background-color: #020111 }
+            4%  { background-color: #20202c }
+            6%  { background-color: #40405c }
+            10%  { background-color: #757abf }
+            14%  { background-color: #77a2d0 }
+            18%  { background-color: #94c5f8 }
+            40%  { background-color: #b7eaff }
+            44%  { background-color: #9be2fe }
+            50%  { background-color: #90dffe }
+            95%  { background-color: #63b6e1 }
+            96%  { background-color: #2473ab }
+            97%  { background-color: #1e528e }
+            98%  { background-color: #1b4372 }
+            99%  { background-color: #112f54 }
+        }
+
+        &__sun {
+            position: absolute;
+            width: 70%;
+            left: 50%;
+            bottom: 0;
+
+            animation-name: moveSun;
+            animation-duration: 24s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            @keyframes moveSun {
+                from { transform: translateX(-50%) rotate(0deg) }
+                to { transform: translateX(-50%) rotate(180deg) }
+            }
+
+            .sun {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: #ffdb4d;
+
+                animation-name: sun;
+                animation-duration: 24s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+
+                @keyframes sun {
+                    from { transform: rotate(0deg) }
+                    to { transform: rotate(-180deg) }
+                }
+
+                &__ray {
+                    position: absolute;
+                    width: 200px;
+                    height: 200px;
+                    top: 50%;
+                    left: 50%;
+                    transform:  translate(-50%, -50%) rotate(0deg);
+                    transition: transform 1s linear, width 1s, height 1s;
+                }
+                &:hover > .sun__ray {
+                    width: 250px;
+                    height: 250px;
+                    transform:  translate(-50%, -50%) rotate(360deg);
+                }
+
+                &__eyes {
+                    position: absolute;
+                    width: 50%;
+                    top: 15%;
+                    left: 25%;
+                    transform: skewX(-3deg);
+                    transition: transform 1s;
+                }
+                &:hover > .sun__eyes {
+                    transform: skewX(3deg);
+                }
+
+                &__mouth {
+                    position: absolute;
+                    width: 60%;
+                    top: 50%;
+                    left: 21%;
+                    transform: skewX(-5deg);
+                    transition: transform 1s;
+                }
+                &:hover > .sun__mouth {
+                    transform: skewX(5deg);
+                }
+            }
+        }
+    }
+
     .field {
         &__ground {
             position: absolute;
